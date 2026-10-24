@@ -121,7 +121,7 @@ def update_weekly_done():
             db.session.commit()
 
 
-@blp.route("/habit")
+@blp.route("/habits")
 class HabitView(MethodView):
     @jwt_required()
     @blp.arguments(HabitSchema)
@@ -158,7 +158,7 @@ class HabitView(MethodView):
 
 
 
-@blp.route("/habit/<int:habit_id>")
+@blp.route("/habits/<int:habit_id>")
 class PickHabit(MethodView):
     @jwt_required()
     @blp.response(200, HabitSchema)
